@@ -2,8 +2,28 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Quarto{
-    String num_Quarto;
-    String cpf_Cliente;
+    int num_Quarto;
+    Boolean status_quarto = false;
+
+    public Quarto(int num_Quarto, boolean status_quarto){
+        this.num_Quarto = num_Quarto;
+        this.status_quarto = status_quarto;
+
+    }
+
+    public boolean reservado(int num_Quarto,String cpf_Cliente){
+        if(status_quarto != true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    public boolean getStatus(int num_Quarto){
+        return status_quarto; // precisamos trabalhar nessas funções de reserva e de checkar status dos quartos (ocupado/vago)
+    }
+        
+
+    }
 
 }
 
@@ -20,10 +40,18 @@ class Queen extends King{
 
 }
 
-class Funcionario{
-    String nome_Funcionario;
-    int id_Funcionario;
-    String função;
+class Employee{
+    String name_Employee;
+    int id_Employee;
+    String job;
+
+    public Employee(String name_Employee, int id_Employee, String job){
+        this.name_Employee = name_Employee;
+        this.id_Employee = id_Employee;
+        this.job = job;
+    }
+
+
 }
 
 class Cliente{
@@ -40,8 +68,9 @@ class Cliente{
     public String get_Nome(String cpf_Cliente){
         return nome_Cliente;
     }
-    public String reservar_Quarto(String tipo_Quarto){
-        return tipo_Quarto; // temporario
+    public String reservar_Quarto(int num_Quarto, String cpf_Cliente){
+        //terminar função de reservas chamando outra função de quarto
+        
 
 
     }

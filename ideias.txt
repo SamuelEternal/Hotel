@@ -37,3 +37,7 @@ Cobertura
 Atendimento 24h
 Frigobar
 Banheira de hidromassagem
+
+classe cliente ser super-classe
+Subclasses de clietes seriam: normal, gold, premium
+    

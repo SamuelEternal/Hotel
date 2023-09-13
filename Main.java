@@ -3,5 +3,9 @@ import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
+        Quarto quarto204 = new Quarto(204, false);
+        System.out.println(quarto204);        
+    
+    
     }
 }

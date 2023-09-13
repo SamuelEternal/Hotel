@@ -1,14 +1,20 @@
 class Quarto {
-    private int numQuarto;
-    private boolean statusQuarto;
+    protected int numQuarto;
+    protected boolean statusQuarto;
+    protected String nomeReserva;
 //construtor de quarto
-    public Quarto(int numQuarto, boolean statusQuarto) {
+    public Quarto(int numQuarto, boolean statusQuarto, String nomeReserva) {
         this.numQuarto = numQuarto;
         this.statusQuarto = false;
+        this.nomeReserva = "";
     }
-
+    public int getNumero(){
+        return numQuarto;
+    }
+        // EM TESTES
     public boolean reservado(int numQuarto, String nome_Cliente) {
-        if (!this.statusQuarto) {
+        if (nome_Cliente != nomeReserva) {
+            this.nomeReserva = nome_Cliente;
             statusQuarto = true;
             return true;
         } else {

@@ -3,11 +3,12 @@ import javax.swing.text.StyledEditorKit.BoldAction;
 public class Cliente{
     private String nomeCliente;
     private String password;
-
+// construtor de cliente
     public Cliente(String nomeCliente, String password){
         this.nomeCliente = nomeCliente;
         this.password = password;
     }
+// gets e sets
     public String getNome(){
         return nomeCliente;
     }
@@ -19,23 +20,16 @@ public class Cliente{
         return password;
     }
     public void setPassword(String senhaNova){
-
+        this.password = senhaNova;
     }
                
     public String reservarQuarto(int numQuarto, String nomeCliente){
-        if(reservado(numQuarto,nomeCliente)){
-            System.out.println("Quarto reservado com sucesso!");
-        }
-        else{
-            System.out.println("Quarto já reservado!");
-        }
+        // fazer do zero
     }
+    public boolean passwordCheck(String password, String nome_Cliente){
+        return getPassword().equals(password);
+    }
+   
 
 
-    private boolean checkPassword(String nomeCliente, String password) {
-        
-        String storedPassword = getPassword(nomeCliente);
-        return storedPassword != null && storedPassword.equals(password);
-    }
-    }
-} 
+

@@ -1,10 +1,10 @@
 class Quarto {
     private int numQuarto;
-    private boolean statusQuarto = false;
-
+    private boolean statusQuarto;
+//construtor de quarto
     public Quarto(int numQuarto, boolean statusQuarto) {
         this.numQuarto = numQuarto;
-        this.statusQuarto = statusQuarto;
+        this.statusQuarto = false;
     }
 
     public boolean reservado(int numQuarto, String nome_Cliente) {

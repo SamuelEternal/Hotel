@@ -1,10 +1,10 @@
 class Quarto {
     protected int num_Quarto;
-    protected boolean status_quarto = false;
+    protected boolean status_quarto;
 
-    public Quarto(int num_Quarto, boolean status_quarto) {
+    public Quarto(int num_Quarto) {
         this.num_Quarto = num_Quarto;
-        this.status_quarto = status_quarto;
+        this.status_quarto = false // O quarto começa como vago
     }
 
     public boolean reservado(int num_Quarto, String nome_Cliente) {

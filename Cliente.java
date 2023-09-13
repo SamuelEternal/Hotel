@@ -10,24 +10,20 @@ public class Cliente{
         this.cpf_Cliente = cpf_Cliente;
         this.password = password;
     }
-    public String getCpf(String nome_Cliente){
+    public String getCpf(){
         return cpf_Cliente;
     }
-    public String getNome(String cpf_Cliente){
+    public String getNome(){
         return nome_Cliente;
     }
 
     }
-    public String getPassword(String nome_Cliente){
+    public String getPassword(){
         return password;
     }
-    public boolean passwordCheck(int password, String nome_Cliente){
-        if(getPassword(nome_Cliente) = password){
-            return true;
+    public boolean passwordCheck(String password, String nome_Cliente){
+            return getPassword(nome_Cliente).equals(password);
     }
-        else{
-            return false;
-        }    
     public String reservarQuarto(int num_Quarto, String nome_Cliente){
         if(reservado(num_Quarto,nome_Cliente)){
             System.out.println("Quarto reservado com sucesso!");

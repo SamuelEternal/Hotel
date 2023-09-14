@@ -15,7 +15,7 @@ public class Cliente{
     public void setNome(String nomeNovo){
         this.nomeCliente = nomeNovo;
     }
-    private String getPassword(){
+    String getPassword(){
         return password;
     }
     public void setPassword(String senhaNova){

@@ -12,15 +12,19 @@ class Quarto {
         return numQuarto;
     }
         // EM TESTES
-    public boolean reservado(int numQuarto, String nome_Cliente) {
-        if (nome_Cliente != nomeReserva) {
-            this.nomeReserva = nome_Cliente;
-            statusQuarto = true;
-            return true;
-        } else {
-            return false;
-        }
-    }
+   protected boolean reservado(int numQuarto, String nomeCliente) {
+       if (!statusQuarto) {
+           this.numQuarto = numQuarto;  // Assign the room number
+           nomeReserva = nomeCliente;
+           statusQuarto = true;
+           System.out.println("Quarto " + numQuarto + " reservado para " + nomeCliente);
+           return true;
+       } else {
+           System.out.println("O quarto " + numQuarto + " já está ocupado.");
+           return false;
+       }
+   }
+
 
     public boolean getStatus() {
         return statusQuarto;

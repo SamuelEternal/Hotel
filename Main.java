@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Quarto quarto204 = new Quarto(204, false, ""); // Add the missing arguments
-        Quarto quarto205 = new Quarto(205, false, ""); // Add the missing arguments
+        Quarto quarto204 = new Quarto(204, false, "");
+        Quarto quarto205 = new Quarto(205, false, "");
         Cliente cliente1 = new Cliente("José", "senha123");
         Cliente cliente2 = new Cliente("Pedro", "batata");
         cliente1.reservarQuarto(quarto204, cliente1.getNome(), "senha123");

@@ -21,7 +21,7 @@ public class Cliente{
     public void setPassword(String senhaNova){
         this.password = senhaNova;
     }
-               // EM TESTES
+               
     public boolean reservarQuarto(Quarto quarto, String nomeCliente, String password, String tipoQuarto) {
         if (!quarto.getStatus()) {
             if (passwordCheck(password, nomeCliente) && quarto.reservado(quarto.getNumero(), nomeCliente)) {

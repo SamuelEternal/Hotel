@@ -17,7 +17,7 @@ class Quarto {
     public int getNumero(){
         return numQuarto;
     }
-        // EM TESTES
+       
    protected boolean reservado(int numQuarto, String nomeCliente) {
        if (!statusQuarto) {
            this.numQuarto = numQuarto;  // Assign the room number
@@ -44,13 +44,8 @@ class Quarto {
         return comodidades;
     }
 
-    public void checkIn(String nomeCliente, int numQuarto) {
-        if (!this.statusQuarto) {
-            System.out.println("Check-in no quarto " + numQuarto + " realizado com sucesso");
-            statusQuarto = true;
-        } else {
-            System.out.println("O quarto " + numQuarto + " já está ocupado.");
-        }
+    public void checkout(){
+        
     }
 }
 

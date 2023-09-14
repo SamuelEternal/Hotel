@@ -12,7 +12,8 @@ public class Main {
             System.out.println("Bem-vindo ao Sistema de Reservas de Hotel");
             System.out.println("1. Fazer login");
             System.out.println("2. Ver quartos disponíveis");
-            System.out.println("3. Sair");
+            System.out.println("3. verificar senha");
+            System.out.println("4. Sair");
             System.out.print("Por favor, escolha uma opção: ");
 
             int escolha = scanner.nextInt();
@@ -50,8 +51,17 @@ public class Main {
                             default -> System.out.println("Escolha inválida.");
                         }
                     }
+                }// case 3 é temporário, preciso falar com vcs pra ver como implementar no menu, mas o metodo ta funcionando melhor
+                case 3 ->{
+                  System.out.println("Digite o nome do usuário:");
+                  String nomeTeste = scanner.nextLine();
+                  System.out.println("Digite a senha a ser testada:");
+                  String senhaTeste = scanner.nextLine();                 
+                  System.out.println(cliente.passwordCheck(senhaTeste, nomeTeste));
+
+
                 }
-                case 3 -> {
+                case 4 -> {
                     System.out.println("Até logo!");
                     scanner.close();
                     System.exit(0);

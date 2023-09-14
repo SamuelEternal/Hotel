@@ -38,12 +38,14 @@ public class Cliente{
         }
         return false;
     }
-
-    public boolean passwordCheck(String password, String nome_Cliente){
-        return getPassword().equals(password);
+        public boolean passwordCheck(String password, String nomeCliente){
+            if(getNome().equals(nomeCliente)){
+                return getPassword().equals(password);
+            }else{
+                return false;
+            }
+        }
     }
-}
-   
-
+    
 
 

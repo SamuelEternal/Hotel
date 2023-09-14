@@ -2,11 +2,17 @@ class Quarto {
     protected int numQuarto;
     protected boolean statusQuarto;
     protected String nomeReserva;
+    protected double precoDiaria;
+    protected String comodidades;
+
 //construtor de quarto
-    public Quarto(int numQuarto, boolean statusQuarto, String nomeReserva) {
+    public Quarto(int numQuarto, double precoDiaria, String comodidades, boolean statusQuarto, String nomeReserva) {
         this.numQuarto = numQuarto;
         this.statusQuarto = false;
         this.nomeReserva = "";
+        this.precoDiaria = precoDiaria;
+        this.comodidades = comodidades;
+
     }
     public int getNumero(){
         return numQuarto;
@@ -30,6 +36,14 @@ class Quarto {
         return statusQuarto;
     }
 
+    public double getPrecoDiaria() {
+        return precoDiaria;
+    }
+
+    public String getComodidades() {
+        return comodidades;
+    }
+
     public void checkIn(String nomeCliente, int numQuarto) {
         if (!this.statusQuarto) {
             System.out.println("Check-in no quarto " + numQuarto + " realizado com sucesso");
@@ -39,3 +53,4 @@ class Quarto {
         }
     }
 }
+

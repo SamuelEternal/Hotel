@@ -43,8 +43,8 @@ class Quarto {
     public String getComodidades() {
         return comodidades;
     }
-
-    public void checkout(){
+// checkout tem que restaurar o objeto ao estado que ele estava antes de ser reservado 
+    public void checkout(Quarto quarto, String nomeCliente, String password){
         
     }
 }

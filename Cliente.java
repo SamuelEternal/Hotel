@@ -1,12 +1,15 @@
 
+
 public class Cliente{
     private String nomeCliente;
     private String password;
+    private Quarto quartoReservado;
 
 // construtor de cliente
     public Cliente(String nomeCliente, String password){
         this.nomeCliente = nomeCliente;
         this.password = password;
+        this.quartoReservado = null;
     }
 // gets e sets
     public String getNome(){
@@ -15,30 +18,49 @@ public class Cliente{
     public void setNome(String nomeNovo){
         this.nomeCliente = nomeNovo;
     }
-    String getPassword(){
+
+    public String getPassword(){
         return password;
     }
     public void setPassword(String senhaNova){
         this.password = senhaNova;
     }
-               
-    public boolean reservarQuarto(Quarto quarto, String nomeCliente, String password, String tipoQuarto) {
-        if (!quarto.getStatus()) {
-            if (passwordCheck(password, nomeCliente) && quarto.reservado(quarto.getNumero(), nomeCliente)) {
+
+    public Quarto getQuartoReservado() {
+        return quartoReservado;
+    }
+
+    public void setQuartoReservado(Quarto quartoReservado) {
+        this.quartoReservado = quartoReservado;
+    }
+
+    public void reservarQuarto(Quarto quarto, String nomeCliente, String password, String tipoQuarto) {
+        try {
+            if (quarto.getStatus()) {
+                throw new QuartoOcupadoException("O quarto " + quarto.getNumero() + " já está ocupado");
+            }
+
+            if (!passwordCheck(password, nomeCliente)) {
+                throw new SenhaIncorretaException("Senha incorreta.");
+            }
+
+            boolean reservadoComSucesso = quarto.reservado(nomeCliente);
+            if (reservadoComSucesso) {
+                setQuartoReservado(quarto);
                 System.out.println(tipoQuarto + " reservado com sucesso para " + nomeCliente);
                 System.out.println("Preço da diária: " + quarto.getPrecoDiaria());
                 System.out.println("Comodidades: " + quarto.getComodidades());
-                return true;
             } else {
                 System.out.println(tipoQuarto + " reservado anteriormente, tente novamente.");
-
             }
-        } else {
-            System.out.println("O quarto " + quarto.getNumero() + " já está ocupado");
+        } catch (QuartoOcupadoException | SenhaIncorretaException | QuartoReservadoException e) {
+            System.out.println(e.getMessage());
         }
-        return false;
     }
-        public boolean passwordCheck(String password, String nomeCliente){
+
+
+
+    public boolean passwordCheck(String password, String nomeCliente){
             if(getNome().equals(nomeCliente)){
                 return getPassword().equals(password);
             }else{

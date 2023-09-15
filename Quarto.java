@@ -1,3 +1,4 @@
+
 class Quarto {
     protected int numQuarto;
     protected boolean statusQuarto;
@@ -5,8 +6,8 @@ class Quarto {
     protected double precoDiaria;
     protected String comodidades;
 
-//construtor de quarto
-    public Quarto(int numQuarto, double precoDiaria, String comodidades, boolean statusQuarto, String nomeReserva) {
+    //construtor de quarto
+    public Quarto(int numQuarto, double precoDiaria, String comodidades) {
         this.numQuarto = numQuarto;
         this.statusQuarto = false;
         this.nomeReserva = "";
@@ -14,22 +15,16 @@ class Quarto {
         this.comodidades = comodidades;
 
     }
-    public int getNumero(){
+    protected void reservar(String nomeCliente) {
+        // Marque o quarto como reservado e defina o nome do cliente que fez a reserva
+        this.statusQuarto = true;
+        this.nomeReserva = nomeCliente;
+    }
+
+    public int getNumero() {
         return numQuarto;
     }
-       
-   protected boolean reservado(int numQuarto, String nomeCliente) {
-       if (!statusQuarto) {
-           this.numQuarto = numQuarto;  // Assign the room number
-           nomeReserva = nomeCliente;
-           statusQuarto = true;
-           System.out.println("Quarto " + numQuarto + " reservado para " + nomeCliente);
-           return true;
-       } else {
-           System.out.println("O quarto " + numQuarto + " já está ocupado.");
-           return false;
-       }
-   }
+
 
 
     public boolean getStatus() {
@@ -43,9 +38,30 @@ class Quarto {
     public String getComodidades() {
         return comodidades;
     }
-// checkout tem que restaurar o objeto ao estado que ele estava antes de ser reservado 
-    public void checkout(Quarto quarto, String nomeCliente, String password){
-        
+
+    // checkout tem que restaurar o objeto ao estado que ele estava antes de ser reservado
+
+    protected boolean reservado(String nomeCliente) throws QuartoReservadoException {
+        if (!statusQuarto) {
+            nomeReserva = nomeCliente;
+            statusQuarto = true;
+            System.out.println("Quarto " + numQuarto + " reservado para " + nomeCliente);
+            return true;
+        } else {
+            throw new QuartoReservadoException("O quarto " + numQuarto + " já está ocupado.");
+        }
     }
+
+    public void checkout() {
+        if (statusQuarto) {
+            // Realize o checkout, marcando o quarto como não reservado
+            statusQuarto = false;
+            nomeReserva = "";
+            System.out.println("Checkout realizado com sucesso.");
+        } else {
+            System.out.println("Este quarto já está liberado.");
+        }
+    }
+
 }
 

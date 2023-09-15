@@ -22,11 +22,16 @@ public class Main {
             switch (escolha) {
                 case 1 -> {
                     System.out.print("Digite seu nome de usuário: ");
-                    String nomeUsuario = scanner.nextLine();
+                    String nomeUsuario = scanner.nextLine().trim();
                     System.out.print("Digite sua senha: ");
-                    String senha = scanner.nextLine();
-                    cliente = new Cliente(nomeUsuario, senha);
-                    System.out.println("Conectado como " + cliente.getNome());
+                    String senha = scanner.nextLine().trim(); // trim remove os espaços em branco
+                    if (nomeUsuario.isEmpty() || senha.isEmpty()) {
+                        System.out.println("Nome de usuário e senha são obrigatórios.");
+                    } else {
+                        cliente = new Cliente(nomeUsuario, senha);
+                        System.out.println("Conectado como " + cliente.getNome());
+                    }
+                    break;
                 }
                 case 2 -> {
                     if (cliente == null) {
@@ -56,9 +61,13 @@ public class Main {
                   System.out.println("Digite o nome do usuário:");
                   String nomeTeste = scanner.nextLine();
                   System.out.println("Digite a senha a ser testada:");
-                  String senhaTeste = scanner.nextLine();                 
-                  System.out.println(cliente.passwordCheck(senhaTeste, nomeTeste));
-
+                  String senhaTeste = scanner.nextLine();
+                  if (cliente != null && nomeTeste != null && senhaTeste != null) {
+                      boolean passwordMatch = cliente.passwordCheck(senhaTeste, nomeTeste);
+                      System.out.println("Senha está correta? " + passwordMatch);
+                  } else {
+                      System.out.println("Erro: Cliente ou dados de entrada são nulos");
+                  }
 
                 }
                 case 4 -> {

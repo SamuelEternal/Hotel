@@ -13,7 +13,8 @@ public class Main {
             System.out.println("1. Fazer login");
             System.out.println("2. Ver quartos disponíveis");
             System.out.println("3. verificar senha");
-            System.out.println("4. Sair");
+            System.out.println("4. Checkout");
+            System.out.println("5. Sair");
             System.out.print("Por favor, escolha uma opção: ");
 
             int escolha = scanner.nextInt();
@@ -31,7 +32,7 @@ public class Main {
                         cliente = new Cliente(nomeUsuario, senha);
                         System.out.println("Conectado como " + cliente.getNome());
                     }
-                    break;
+
                 }
                 case 2 -> {
                     if (cliente == null) {
@@ -57,20 +58,34 @@ public class Main {
                         }
                     }
                 }// case 3 é temporário, preciso falar com vcs pra ver como implementar no menu, mas o metodo ta funcionando melhor
-                case 3 ->{
-                  System.out.println("Digite o nome do usuário:");
-                  String nomeTeste = scanner.nextLine();
-                  System.out.println("Digite a senha a ser testada:");
-                  String senhaTeste = scanner.nextLine();
-                  if (cliente != null && nomeTeste != null && senhaTeste != null) {
-                      boolean passwordMatch = cliente.passwordCheck(senhaTeste, nomeTeste);
-                      System.out.println("Senha está correta? " + passwordMatch);
-                  } else {
-                      System.out.println("Erro: Cliente ou dados de entrada são nulos");
-                  }
+                case 3 -> {
+                    System.out.println("Digite o nome do usuário:");
+                    String nomeTeste = scanner.nextLine();
+                    System.out.println("Digite a senha a ser testada:");
+                    String senhaTeste = scanner.nextLine();
+                    if (cliente != null && nomeTeste != null && senhaTeste != null) {
+                        boolean passwordMatch = cliente.passwordCheck(senhaTeste, nomeTeste);
+                        System.out.println("Senha está correta? " + passwordMatch);
+                    } else {
+                        System.out.println("Erro: Cliente ou dados de entrada são nulos");
+                    }
 
                 }
                 case 4 -> {
+                    if (cliente != null) {
+                        Quarto quartoReservado = cliente.getQuartoReservado();
+                        if (quartoReservado != null) {
+                            quartoReservado.checkout();
+                            System.out.println("Seu checkout foi realizado com sucesso " + cliente.getNome());
+                            cliente.setQuartoReservado(null);
+                        } else {
+                            System.out.println("Você não tem um quarto reservado para fazer o checkout.");
+                        }
+                    } else {
+                        System.out.println("Por favor, faça o login primeiro.");
+                    }
+                }
+                case 5 -> {
                     System.out.println("Até logo!");
                     scanner.close();
                     System.exit(0);

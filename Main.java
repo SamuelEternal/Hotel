@@ -1,5 +1,11 @@
+import model.QuartoComum;
+import model.QuartoPremium;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import model.Cliente;
+import model.Quarto;
+
 
 public class Main {
     public static void main(String[] args) {

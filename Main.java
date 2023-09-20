@@ -1,11 +1,5 @@
-import model.QuartoComum;
-import model.QuartoPremium;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import model.Cliente;
-import model.Quarto;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +15,7 @@ public class Main {
                 System.out.println("1. Fazer login");
                 System.out.println("2. Ver quartos disponíveis");
                 System.out.println("3. Verificar senha");
-                System.out.println("4. Checkout");
+                System.out.println("4. Couheckt");
                 System.out.println("5. Sair");
                 System.out.print("Por favor, escolha uma opção: ");
 
@@ -41,7 +35,7 @@ public class Main {
                             System.out.println("Conectado como " + cliente.getNome());
                         }
                     }
-                    case 2 -> {
+                    case 2 -> {////// arrumar submenu de quartos
                         if (cliente == null) {
                             System.out.println("Por favor, faça o login primeiro.");
                         } else {
@@ -65,7 +59,7 @@ public class Main {
                             }
                         }
                     }
-                    case 3 -> {
+                    case 3 -> {/// 
                         System.out.println("Digite o nome do usuário:");
                         String nomeTeste = scanner.nextLine();
                         System.out.println("Digite a senha a ser testada:");

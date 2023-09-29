@@ -10,43 +10,61 @@ public class Main {
         QuartoComum quartoComum = new QuartoComum(204);
         QuartoPremium quartoPremium = new QuartoPremium(205);
 
+        System.out.println("\nBem-vindo ao Sistema de Reservas de Hotel");
+        System.out.println("1- Fazer login.");
+        System.out.println("2- Fazer cadastro.");
+        int entrada = scanner.nextInt();
+        if(entrada == 1){
+            System.out.println("Digite seu nome:");
+            String nomeLogin = scanner.nextLine();
+            System.out.println("Digite sua senha:");
+            String senhaLogin = scanner.nextLine();
+            // chamar função de login
+
+        }
+        else{
+            System.out.println("Digite seu nome:");
+            String nomeLogin = scanner.nextLine();
+            System.out.println("Digite sua senha:");
+            String senhaLogin = scanner.nextLine();
+            cliente = new Cliente(nomeLogin, senhaLogin);
+
+        }
         while (true) {
             try {
-                System.out.println("\nBem-vindo ao Sistema de Reservas de Hotel");
-                System.out.println("\n1. Fazer login");
+                System.out.println("\n1. Fazer login");/////// reorganizar os case
                 System.out.println("2. Ver quartos disponíveis");
-                System.out.println("3. Verificar senha");
+                System.out.println("3. Verificar senha");//
                 System.out.println("4. Checkout");
                 System.out.println("5. Sair");
                 System.out.print("\nPor favor, escolha uma opção: ");
 
                 int escolha = scanner.nextInt();
-                scanner.nextLine(); // Consumir a quebra de linha
-
+                scanner.nextLine();
                 switch (escolha) {
                     case 1 -> {
                         System.out.print("\nDigite seu nome de usuário: ");
                         String nomeUsuario = scanner.nextLine().trim();
                         System.out.print("\nDigite sua senha: ");
-                        String senha = scanner.nextLine().trim(); // trim removes leading/trailing spaces
+                        String senha = scanner.nextLine().trim();
                         if (nomeUsuario.isEmpty() || senha.isEmpty()) {
                             System.out.println("Nome de usuário e senha são obrigatórios.");
                         } else {
                             cliente = new Cliente(nomeUsuario, senha);
-                            System.out.println("Conectado como " + cliente.getNome());
+                            System.out.println("\nConectado como " + cliente.getNome());
                         }
                     }
                     case 2 -> {////// arrumar submenu de quartos
                         if (cliente == null) {
-                            System.out.println("Por favor, faça o login primeiro.");
+                            System.out.println("\nPor favor, faça o login primeiro.\n");
                         } else {
-                            System.out.println("Quartos Disponíveis:");
+                            System.out.println("\nQuartos Disponíveis:");
                             System.out.println("\n1. Quarto Comum: \n" + quartoComum.getComodidades());
                             System.out.println("\n2. Quarto Premium \n" + quartoPremium.getComodidades());
                             System.out.println("\n3. Voltar ao menu principal\n");
                             System.out.print("Selecione um tipo de quarto ou volte: ");
                             int escolhaQuarto = scanner.nextInt();
-                            scanner.nextLine(); // Consumir a quebra de linha
+                            scanner.nextLine(); 
 
                             switch (escolhaQuarto) {
                                 case 1 ->
@@ -55,7 +73,7 @@ public class Main {
                                         cliente.reservarQuarto(quartoPremium, cliente.getNome(), cliente.getPassword(), "Quarto Premium");
                                 case 3 -> {
                                 }
-                                // Voltar para o menu principal
+                               
                                 default -> System.out.println("Escolha inválida.");
                             }
                         }
@@ -95,7 +113,7 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Escolha inválida. Por favor, insira um número válido.");
-                scanner.nextLine(); // Consume the invalid input
+                scanner.nextLine(); 
             }
         }
     }

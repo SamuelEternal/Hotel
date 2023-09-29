@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,22 +12,22 @@ public class Main {
 
         while (true) {
             try {
-                System.out.println("Bem-vindo ao Sistema de Reservas de Hotel");
-                System.out.println("1. Fazer login");
+                System.out.println("\nBem-vindo ao Sistema de Reservas de Hotel");
+                System.out.println("\n1. Fazer login");
                 System.out.println("2. Ver quartos disponíveis");
                 System.out.println("3. Verificar senha");
-                System.out.println("4. Couheckt");
+                System.out.println("4. Checkout");
                 System.out.println("5. Sair");
-                System.out.print("Por favor, escolha uma opção: ");
+                System.out.print("\nPor favor, escolha uma opção: ");
 
                 int escolha = scanner.nextInt();
                 scanner.nextLine(); // Consumir a quebra de linha
 
                 switch (escolha) {
                     case 1 -> {
-                        System.out.print("Digite seu nome de usuário: ");
+                        System.out.print("\nDigite seu nome de usuário: ");
                         String nomeUsuario = scanner.nextLine().trim();
-                        System.out.print("Digite sua senha: ");
+                        System.out.print("\nDigite sua senha: ");
                         String senha = scanner.nextLine().trim(); // trim removes leading/trailing spaces
                         if (nomeUsuario.isEmpty() || senha.isEmpty()) {
                             System.out.println("Nome de usuário e senha são obrigatórios.");
@@ -40,9 +41,9 @@ public class Main {
                             System.out.println("Por favor, faça o login primeiro.");
                         } else {
                             System.out.println("Quartos Disponíveis:");
-                            System.out.println("1. Quarto Comum (204)");
-                            System.out.println("2. Quarto Premium (205)");
-                            System.out.println("3. Voltar ao menu principal");
+                            System.out.println("\n1. Quarto Comum: \n" + quartoComum.getComodidades());
+                            System.out.println("\n2. Quarto Premium \n" + quartoPremium.getComodidades());
+                            System.out.println("\n3. Voltar ao menu principal\n");
                             System.out.print("Selecione um tipo de quarto ou volte: ");
                             int escolhaQuarto = scanner.nextInt();
                             scanner.nextLine(); // Consumir a quebra de linha

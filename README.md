@@ -1,8 +1,4 @@
-| Participantes       |
-|---------------------|
-| Liedson             |
-| Samuel              |
-| Leandro             |
+
 
 # Sistema de Hotel 🕋
 
@@ -21,3 +17,9 @@ O sistema de hotel tem como objetivo melhorar a experiência tanto para os hósp
 ### Apresentação
 
 https://youtu.be/Z2tVUbGYYMg
+
+| Participantes       |
+|---------------------|
+| Liedson             |
+| Samuel              |
+| Leandro             |

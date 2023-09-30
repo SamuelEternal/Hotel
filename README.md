@@ -18,8 +18,8 @@ O sistema de hotel tem como objetivo melhorar a experiência tanto para os hósp
 
 https://youtu.be/Z2tVUbGYYMg
 
-| Participantes       |
-|---------------------|
-| Liedson             |
-| Samuel              |
-| Leandro             |
+| Participantes       | Links para os Perfis            |
+|---------------------|---------------------------------|
+| Liedson             | [Perfil do Liedson](link-liedson) |
+| Samuel              | [Perfil do Samuel](link-samuel)   |
+| Leandro             | [Perfil do Leandro](link-leandro) |

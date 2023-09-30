@@ -10,3 +10,7 @@ A gestão eficiente de hotéis desempenha um papel crucial na indústria de turi
 ### Objetivos
 
 O sistema de hotel tem como objetivo melhorar a experiência tanto para os hóspedes quanto para a equipe do hotel, otimizando processos e oferecendo um serviço de alta qualidade. Além disso, o sistema manterá um registro completo de todos os quartos disponíveis, suas características e preços, garantindo que cada hóspede encontre a acomodação.
+
+### Apresentação
+
+https://youtu.be/Z2tVUbGYYMg

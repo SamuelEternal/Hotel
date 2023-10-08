@@ -20,6 +20,6 @@ https://youtu.be/Z2tVUbGYYMg
 
 | Participantes       | Links para os Perfis            |
 |---------------------|---------------------------------|
-| Liedson             | [Perfil do Liedson]([link-liedson](https://github.com/Liedson1)) |
+| Liedson             | [Perfil do Liedson](https://github.com/Liedson1) |
 | Samuel              | [Perfil do Samuel](link-samuel)   |
 | Leandro             | [Perfil do Leandro](link-leandro) |
